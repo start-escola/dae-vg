@@ -1,0 +1,6 @@
+[submodule "dae-vg-client"]
+	path = dae-vg-client
+	url = https://github.com/start-escola/dae-vg-client
+[submodule "dae-vg-api"]
+	path = dae-vg-api
+	url = https://github.com/start-escola/dae-vg-api

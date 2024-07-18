@@ -69,6 +69,8 @@ services:
     ports:
       - 80:80
       - 443:443
+    env_file:
+      - .env
     volumes:
     - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
     depends_on:

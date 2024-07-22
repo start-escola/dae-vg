@@ -80,7 +80,7 @@ services:
       - nextjs
       - strapi
     networks:
-      - strap
+      - strapi
 
   certbot:
     image: certbot/certbot

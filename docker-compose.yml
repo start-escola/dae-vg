@@ -2,11 +2,12 @@ version: "3"
 services:
   strapi:
     container_name: strapi
-    build: 
+    build:
       context: ./dae-vg-api
       dockerfile: Dockerfile.prod
     restart: unless-stopped
-    env_file: .env
+    env_file:
+      - .env
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: db
@@ -36,7 +37,8 @@ services:
     container_name: db
     platform: linux/amd64
     restart: unless-stopped
-    env_file: .env
+    env_file:
+      - .env
     image: postgres:12.0-alpine
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
@@ -51,8 +53,9 @@ services:
 
   nextjs:
     container_name: nextjs
-    env_file: .env
-    build: 
+    env_file:
+      - .env
+    build:
       context: ./dae-vg-client
       dockerfile: Dockerfile.prod
     restart: unless-stopped

@@ -54,7 +54,7 @@ services:
   nextjs:
     container_name: nextjs
     env_file:
-      - .env
+      - .env.local
     build:
       context: ./dae-vg-client
       dockerfile: Dockerfile.prod
@@ -73,3 +73,4 @@ networks:
   strapi:
     name: Strapi
     driver: bridge
+

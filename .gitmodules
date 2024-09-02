@@ -1,6 +1,8 @@
 [submodule "dae-vg-client"]
+  branch = main
 	path = dae-vg-client
 	url = https://github.com/start-escola/dae-vg-client
 [submodule "dae-vg-api"]
+  branch = main
 	path = dae-vg-api
 	url = https://github.com/start-escola/dae-vg-api

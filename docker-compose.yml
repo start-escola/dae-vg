@@ -19,6 +19,12 @@ services:
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
       NODE_ENV: ${NODE_ENV}
+      BASE_URL: ${BASE_URL}
+      BREVO_API_KEY: ${BREVO_API_KEY}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_USERNAME: ${SMTP_USERNAME}
+      SMTP_PASSWORD: ${SMTP_PASSWORD}
     volumes:
       - ./dae-vg-api/config:/opt/app/config
       - ./dae-vg-api/src:/opt/app/src
@@ -54,10 +60,12 @@ services:
   nextjs:
     container_name: nextjs
     env_file:
-      - .env.local
+      - .env
     build:
       context: ./dae-vg-client
       dockerfile: Dockerfile.prod
+      args:
+        - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     restart: unless-stopped
     environment:
       - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
